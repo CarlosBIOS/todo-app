@@ -1,5 +1,5 @@
 # Explicação de como usar o git:
-# Primeiramente, para um project ter a funcionalidade do git, temos que ir á opção VSC e escolher a 1 opção!!!!
+# Primeiramente, para um project ter a funcionalidade do git, temos que ir à opção VSC e escolher a 1 opção!!!!
 # Vai à opção master na parte superior esquerdo e carregas em commit. De seguida, escreves no quadrado inferior Initial
 # commit e tenho que selecionar os respetivos arquivos no quadrado superior!
 # E pronto, agora os ficheiros selecionados vão estar a ser rastreados pelo git!!!!
@@ -65,4 +65,3 @@ if __name__ == '__main__':
             print(f'{index + 1}: {element}', file=input_file)
 
     print('Bye!')
-
