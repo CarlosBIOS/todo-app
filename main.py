@@ -4,6 +4,16 @@
 # commit e tenho que selecionar os respetivos arquivos no quadrado superior!
 # E pronto, agora os ficheiros selecionados vão estar a ser rastreados pelo git!!!!
 
+# Posso escrescentar git checkout e git reset. O git checkout serve para visualizar os ficheiros anteriores, ou seja, se
+# eu quisesse voltar para o "passado"(ver a versão anterior), carregava alt+9 selecionava, por exemplo, o ficheiro
+# initial commit e com o botão direito do rato carregava checkout revision!! E pronto, estava na versão anterior, e se
+# quisesse voltar ao ficheiro mais recente, tinha que carrega nesse mesmo folder e carregar na opção checkout e dps
+# master. Mas não se recomenda usar esta opção se realmente quero ir para aquela versão e eliminar permanentemente as
+# outras após dessa e sim o git reset. Para acessar ao git reset, é o mesmo processo que git checkout, mas tenho que
+# selecionar com o botão direito em reset current branch to here and then carregar na opção hard!!
+
+# Atenção, se eu fechar o aplictivo, todos os commits desaparecem!!!!
+
 import datetime
 
 todos: list = []
