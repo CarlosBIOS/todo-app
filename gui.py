@@ -8,4 +8,3 @@ button = Button('Add')
 my_window = Window('My To-Do App', layout=[[label], [input_box, button]])
 my_window.read()
 my_window.close()
-
