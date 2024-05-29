@@ -15,8 +15,7 @@ while True:
     print(event, values)
     match event:
         case 'Add':
-            todos: list = functions.get_todos(item=values['todo'] + '\n')
-            functions.write_todos(todos)
+            functions.get_and_write_todos(item=values['todo'])
 
         case WINDOW_CLOSED:
             break
