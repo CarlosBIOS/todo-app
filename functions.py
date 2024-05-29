@@ -15,9 +15,11 @@ def get_and_write_todos(filepath: str = FILEPATH, item: str = None, substituir: 
     with open(filepath, 'r+') as file:
         todos: list = file.readlines()  # Read existing todos
         if item:
+            index = len(todos)
             if substituir:
+                index = todos.index(substituir)
                 todos.remove(substituir)
-            todos.append(f'{item}\n')  # Add new item if provided
+            todos.insert(index, f'{item}\n')  # Add new item if provided
         file.seek(0)  # Move the pointer to the beginning of the file
         file.writelines(todos)  # Write the updated list back to the file
 
