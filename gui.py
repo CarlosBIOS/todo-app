@@ -19,11 +19,12 @@ while True:
     print(event, values)
     match event:
         case 'Add':
-            my_window['todos'].update(values=functions.get_and_write_todos(item=values['todo']))
+            item = functions.get_and_write_todos(item=values['todo'] + '\n')
+            my_window['todos'].update(values=item)
 
         case 'Edit':
-            my_window['todos'].update(values=functions.get_and_write_todos(item=values['todo'],
-                                                                           substituir=values['todos'][0]))
+            item = functions.get_and_write_todos(item=values['todo'] + '\n', substituir=values['todos'][0])
+            my_window['todos'].update(values=item)
             # Ver mais casos, pois ainda dá mal!!!!!
 
         case WIN_CLOSED:
