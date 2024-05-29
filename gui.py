@@ -28,6 +28,5 @@ while True:
             # Ver mais casos, pois ainda dá mal!!!!!
 
         case WIN_CLOSED:
-            break
-
-my_window.close()
+            exit()  # Vantagem de usar esta função, é que dps de executá-la, o programa fecha-se completamente, então já
+            # não é preciso o my_window.close()
