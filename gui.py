@@ -8,7 +8,7 @@ import functions
 label = Text('Type in a To-Do')
 input_box = InputText(tooltip='Enter todo', key='todo')
 add_button = Button('Add')
-list_box = Listbox(values=functions.get_and_write_todos(), enable_events=True, size=(45, 10), key='todos')
+list_box = Listbox(values=functions.get_and_write_todos(), enable_events=False, size=(45, 10), key='todos')
 edit_button = Button('Edit')
 
 my_window = Window('My To-Do App', layout=[[label], [input_box, add_button], [list_box, edit_button]],
