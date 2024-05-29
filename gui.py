@@ -2,7 +2,6 @@
 # popular web frameworks are Django, Flask, and Streamlit. In fact, Python is way better for building web apps. We will
 # eventually build a To-Do List web app on Day 19!!!
 from FreeSimpleGUI import Text, Window, InputText, Button, Listbox
-
 import functions
 
 label = Text('Type in a To-Do')
