@@ -1,28 +1,24 @@
-# Fazer uma função onde faz o get_todo e write_todo simultaneamente!!
 FILEPATH = 'Files/todo.txt'
 
 
-def get_todos(filepath: str = FILEPATH, item: str = None) -> list:
+def get_and_write_todos(filepath: str = FILEPATH, item: str = None) -> list:
     """
-    Read a text file and return the list of to-do items.
+    Reads the to-do list from a text file, adds a new `item` if provided,
+    and writes the updated list back to the file.
 
-    If `item` is define, então vão colocá-la na lista of to-do
-    :param filepath: O ficheiro txt que quero ler
-    :param item:
-    :return: a list onde cada elemento é um parágrafo
+    Args:
+        filepath (str, optional): The path to the to-do list file. Defaults to 'Files/to-do.txt'.
+        item (str, optional): A new to-do `item` to add to the list. Defaults to None.
+
+    Returns:
+        list: The updated list of to-do items.
     """
-    with open(filepath) as file_local:
-        todos_local: list = file_local.readlines()
+
+    with open(filepath, 'r+') as file:
+        todos: list = file.readlines()  # Read existing todos
         if item:
-            todos_local.append(item)
-    return todos_local
+            todos.append(f'{item}\n')  # Add new item if provided
+        file.seek(0)  # Move the pointer to the beginning of the file
+        file.writelines(todos)  # Write the updated list back to the file
 
-
-def write_todos(todos_arg, filepath=FILEPATH) -> None:
-    """
-    Write the to-do items list in the text files
-    :param todos_arg: The items that I want to put in the `filepath`
-    :param filepath: O ficheiro onde quero escrever
-    """
-    with open(filepath, 'w') as file:
-        file.writelines(todos_arg)
+    return todos
