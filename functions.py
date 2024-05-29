@@ -19,7 +19,7 @@ def get_and_write_todos(filepath: str = FILEPATH, item: str = None, substituir: 
             if substituir:
                 index = todos.index(substituir)
                 todos.remove(substituir)
-            todos.insert(index, f'{item}\n')  # Add new item if provided
+            todos.insert(index, f'{item}')  # Add new item if provided
         file.seek(0)  # Move the pointer to the beginning of the file
         file.writelines(todos)  # Write the updated list back to the file
 
