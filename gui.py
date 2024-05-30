@@ -20,6 +20,8 @@ while True:
         case 'Add':
             item = functions.get_and_write_todos(item=values['todo'] + '\n')
             my_window['todos'].update(values=item)
+            # Quando escrevo my_window[key] significa que estão a chamar a função, ou seja, my_window['todos']
+            # representa ListBox(button) widget
 
         case 'Edit':
             item = functions.get_and_write_todos(item=values['todo'] + '\n', substituir=values['todos'][0])
