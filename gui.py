@@ -9,8 +9,11 @@ input_box = InputText(tooltip='Enter todo', key='todo')
 add_button = Button('Add')
 list_box = Listbox(values=functions.get_and_write_todos(), enable_events=False, size=(45, 10), key='todos')
 edit_button = Button('Edit')
+exit_button = Button('Exit')
+complete_button = Button('Complete')
 
-my_window = Window('My To-Do App', layout=[[label], [input_box, add_button], [list_box, edit_button]],
+my_window = Window('My To-Do App',
+                   layout=[[label], [input_box, add_button], [list_box, edit_button, complete_button], [exit_button]],
                    font=('Helvetica', 20))
 
 while True:
@@ -28,6 +31,14 @@ while True:
             my_window['todos'].update(values=item)
             # Ver mais casos, pois ainda dá mal!!!!!
 
-        case WIN_CLOSED:
+        case 'Complete':
+            todo_to_complete = functions.get_and_write_todos(remove_item=values['todos'][0])
+            print(todo_to_complete)
+            my_window['todos'].update(values=todo_to_complete)
+
+        case 'Exit':
             exit()  # Vantagem de usar esta função, é que dps de executá-la, o programa fecha-se completamente, então já
             # não é preciso o my_window.close()
+
+        case WIN_CLOSED:
+            exit()
