@@ -27,14 +27,14 @@ while True:
                 # Quando escrevo my_window[key] significa que estão a chamar a função, ou seja, my_window['todos']
                 # representa ListBox(button) widget
             else:
-                popup('Please, escreve algo na caixa de texto para adicioná-lo!')
+                popup('Please, escreve algo na caixa de texto para adicioná-lo!', font=('Helvica', 20))
 
         case 'Edit':
             if values['todo']:
                 item = functions.get_and_write_todos(item=values['todo'] + '\n', substituir=values['todos'][0])
                 my_window['todos'].update(values=item)
             else:
-                popup('Please escolhe uma da lista!')
+                popup('Please escolhe uma da lista!', font=('Helvica', 20))
 
         case 'Complete':
             try:
@@ -42,7 +42,7 @@ while True:
                 print(todo_to_complete)
                 my_window['todos'].update(values=todo_to_complete)
             except IndexError:
-                popup('Please ecolhe um da lista!')
+                popup('Please ecolhe um da lista!', font=('Helvica', 20))
 
         case 'Exit':
             exit()  # Vantagem de usar esta função, é que dps de executá-la, o programa fecha-se completamente, então já
@@ -50,3 +50,5 @@ while True:
 
         case WIN_CLOSED:
             exit()
+
+# Acrscentar as que já foram feitas!
