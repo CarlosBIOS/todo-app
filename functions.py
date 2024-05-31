@@ -25,11 +25,6 @@ def get_and_write_todos(filepath: str = FILEPATH, item: str = None, substituir: 
         if remove_item:
             del todos[todos.index(remove_item)]
 
-            with open(FILEPATH, 'w') as output:
-                output.writelines(todos)
-            return todos
-
-        file.seek(0)  # Move the pointer to the beginning of the file
-        file.writelines(todos)  # Write the updated list back to the file
-
-    return todos
+        with open(FILEPATH, 'w') as output:
+            output.writelines(todos)
+        return todos
