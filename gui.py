@@ -1,7 +1,7 @@
 # FreeSimpleGUI is only able to create desktop GUIs. To make web apps, you need to use a Python web framework. The most
 # popular web frameworks are Django, Flask, and Streamlit. In fact, Python is way better for building web apps. We will
 # eventually build a To-Do List web app on Day 19!!!
-from FreeSimpleGUI import Text, Window, InputText, Button, Listbox
+from FreeSimpleGUI import Text, Window, InputText, Button, Listbox, popup
 import functions
 
 label = Text('Type in a To-Do')
@@ -21,20 +21,28 @@ while True:
     print(event, values)
     match event:
         case 'Add':
-            item = functions.get_and_write_todos(item=values['todo'] + '\n')
-            my_window['todos'].update(values=item)
-            # Quando escrevo my_window[key] significa que estão a chamar a função, ou seja, my_window['todos']
-            # representa ListBox(button) widget
+            if values['todo']:
+                item = functions.get_and_write_todos(item=values['todo'] + '\n')
+                my_window['todos'].update(values=item)
+                # Quando escrevo my_window[key] significa que estão a chamar a função, ou seja, my_window['todos']
+                # representa ListBox(button) widget
+            else:
+                popup('Please, escreve algo na caixa de texto para adicioná-lo!')
 
         case 'Edit':
-            item = functions.get_and_write_todos(item=values['todo'] + '\n', substituir=values['todos'][0])
-            my_window['todos'].update(values=item)
-            # Ver mais casos, pois ainda dá mal!!!!!
+            if values['todo']:
+                item = functions.get_and_write_todos(item=values['todo'] + '\n', substituir=values['todos'][0])
+                my_window['todos'].update(values=item)
+            else:
+                popup('Please escolhe uma da lista!')
 
         case 'Complete':
-            todo_to_complete = functions.get_and_write_todos(remove_item=values['todos'][0])
-            print(todo_to_complete)
-            my_window['todos'].update(values=todo_to_complete)
+            try:
+                todo_to_complete = functions.get_and_write_todos(remove_item=values['todos'][0])
+                print(todo_to_complete)
+                my_window['todos'].update(values=todo_to_complete)
+            except IndexError:
+                popup('Please ecolhe um da lista!')
 
         case 'Exit':
             exit()  # Vantagem de usar esta função, é que dps de executá-la, o programa fecha-se completamente, então já
