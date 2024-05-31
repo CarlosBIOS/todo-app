@@ -5,10 +5,14 @@ from FreeSimpleGUI import Text, Window, InputText, Button, Listbox, popup, theme
 import functions
 import time
 
-theme('NeonBlue1')
+theme('PythonPlus')
 clock = Text('', key='clock')
 label = Text('Type in a To-Do')
 input_box = InputText(tooltip='Enter todo', key='todo')
+# Como acrescantava fotos ao butão, mas o problema que fica muito pequeno:
+# complete_button = Button(size=20, image_source='Files/complete.png', mouseover_colors='LightBlue2', key='Complete')
+# add_button = Button(size=30, image_source='Files/add.png', mouseover_colors='LightBlue2', tooltip='Add to-do',
+#                     key='Add')
 add_button = Button('Add')
 list_box = Listbox(values=functions.get_and_write_todos(), enable_events=False, size=(45, 10), key='todos')
 edit_button = Button('Edit')
