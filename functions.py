@@ -1,4 +1,4 @@
-FILEPATH = 'Files/todo.txt'
+FILEPATH = 'todo.txt'
 
 
 def get_and_write_todos(filepath: str = FILEPATH, item: str = None, substituir: str = None, remove_item: str = None) -> list:
