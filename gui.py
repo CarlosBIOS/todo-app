@@ -6,6 +6,7 @@
 #  1 passo: Verificar se estou neste path no terminal:
 #  (.venv) C:\Users\cmmon\Desktop\Estudar\Python\Mega Course\Application 1
 #  2 passo: Escrever isto no terminal: pyinstaller --onefile --windowed gui.py
+#  Muito Importante: Só posso criar apps para o meu OS!!!
 
 from FreeSimpleGUI import Text, Window, InputText, Button, Listbox, popup, theme, WINDOW_CLOSED
 import functions
