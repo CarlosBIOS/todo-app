@@ -1,9 +1,20 @@
 # FreeSimpleGUI is only able to create desktop GUIs. To make web apps, you need to use a Python web framework. The most
 # popular web frameworks are Django, Flask, and Streamlit. In fact, Python is way better for building web apps. We will
 # eventually build a To-Do List web app on Day 19!!!
+
+# TODO: Como criar um programa que seja executável no windows:
+#  1 passo: Verificar se estou neste path no terminal:
+#  (.venv) C:\Users\cmmon\Desktop\Estudar\Python\Mega Course\Application 1
+#  2 passo: Escrever isto no terminal: pyinstaller --onefile --windowed gui.py
+
 from FreeSimpleGUI import Text, Window, InputText, Button, Listbox, popup, theme, WINDOW_CLOSED
 import functions
 import time
+import os
+
+if not os.path.exists('todo.txt'):
+    with open('todo.txt', 'w') as output_file:
+        pass
 
 theme('PythonPlus')
 clock = Text('', key='clock')
