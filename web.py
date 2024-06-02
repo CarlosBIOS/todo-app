@@ -9,6 +9,9 @@
 # Nota: para executar o código, não pode ser aqui e sim no terminal e tenho que escrever:
 # streamlit run web.py
 
+# Para colocar um Url publico, devo criar um projecto só com os ficheiros que perciso, ou seja, web.py, to.do.txt,
+# to.do_done.txt e funtions.py!!!
+
 import streamlit as st
 from functions import get_and_write_todos
 from os import path
